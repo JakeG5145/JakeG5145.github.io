@@ -295,10 +295,13 @@ h1 {
 
 .gallery-captioned figure { margin: 0; }
 
+/* One frame height for the row, but the whole photo stays visible:
+   contain letterboxes instead of cropping. */
 .gallery-captioned img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: 210px;
+  object-fit: contain;
+  background: var(--surface);
   border: 1px solid var(--border);
 }
 
