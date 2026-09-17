@@ -3,21 +3,172 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello</title>
+  <title>Jake Galloway | Software Developer</title>
+  <meta name="description" content="Jake Galloway, computer science student at Colorado School of Mines. Full-stack web and Android projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page">
 
-  <h1>Hello, world.</h1>
+    <header class="site-header">
+      <span class="site-name">jakeg5145.github.io</span>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#projects">projects</a>
+        <a href="#hobbies">hobbies</a>
+        <a href="https://github.com/JakeG5145">github</a>
+      </nav>
+    </header>
 
-  <p>
-    This page is live. That is the only thing it is here to prove.
-  </p>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Jake Galloway<br>Software Developer</h1>
+          <p class="lede">I'm a fourth-year computer science student at Colorado School of Mines. I love solving real-world problems through software, hiking, animals (especially canines), video games, and D&amp;D.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn" href="https://github.com/JakeG5145">GitHub</a>
+            <a class="btn" href="mailto:JakeG1444@gmail.com">Email me</a>
+          </div>
+        </div>
+        <img class="headshot" src="images/jake-headshot.jpg" width="480" height="480"
+             alt="Headshot of Jake Galloway in glasses, a navy blazer and a light blue shirt.">
+      </section>
 
-  <p>
-    Everything about it is yours to delete. Open Claude Code in this folder and
-    tell it what you actually want to build.
-  </p>
+      <section id="projects" class="projects">
+        <h2 class="label">// projects</h2>
 
+        <article class="project">
+          <div class="project-meta">
+            <span>01 · steam-selector</span>
+            <span>May – Jul 2026</span>
+          </div>
+          <div class="project-body">
+            <h3>Steam Selector</h3>
+            <p>A web app for friend groups that spend longer picking a game than playing one. Everyone signs in with their Steam account, the app finds the games the whole group owns, and then it picks one to play, giving extra weight to the games people rated highest.</p>
+            <figure class="shot shot-wide">
+              <img src="images/steam-selector-common-games.jpg" width="1904" height="940" loading="lazy"
+                   alt="Steam Selector's Common Multiplayer Games page: 13 games shared by 3 players, each with Love, Like, Dislike and Hate rating buttons, below a Pick a random game button.">
+            </figure>
+            <ul class="tags" aria-label="Technologies">
+              <li>Next.js</li>
+              <li>TypeScript</li>
+              <li>Prisma</li>
+              <li>PostgreSQL</li>
+              <li>Vercel</li>
+            </ul>
+            <div class="links">
+              <a href="https://jakeg5145.github.io/Steam-Selector-Landing-Page/">project site ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-meta">
+            <span>02 · destiny-activity-stat-tracker</span>
+            <span>Feb – May 2026</span>
+          </div>
+          <div class="project-body project-body-split">
+            <div>
+              <h3>Destiny Activity Stat Tracker</h3>
+              <p>An Android app, built with a team of three, that shows Destiny 2 players their live stats. Players log in with their Bungie account and can browse their characters, recent activities, and performance across seven screens.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Kotlin</li>
+                <li>Jetpack Compose</li>
+                <li>Bungie.net API</li>
+                <li>Cloudflare Workers</li>
+              </ul>
+              <div class="links">
+                <a href="https://jakeg5145.github.io/DAST-Website/">project site ↗</a>
+              </div>
+            </div>
+            <figure class="shot shot-phone">
+              <img src="images/dast-home.jpg" width="229" height="513" loading="lazy"
+                   alt="The app's home screen showing the player's fireteam in orbit, their last activity (Nessus, Unstable Centaur), and today's stats.">
+            </figure>
+          </div>
+        </article>
+      </section>
+
+      <section id="hobbies" class="hobbies">
+        <h2 class="label">// hobbies</h2>
+
+        <article class="project">
+          <div class="project-meta">
+            <span>01 · hiking</span>
+          </div>
+          <div class="project-body">
+            <h3>Hiking</h3>
+            <p>I really enjoy hiking on all of the great trails around Golden. I'll typically go at dawn or dusk to see more wildlife, especially my favorite animals: coyotes and foxes (please excuse the quality of my photography, my phone camera isn't great and these were taken from quite far away).</p>
+            <ul class="gallery">
+              <li>
+                <img src="images/hiking-coyote.jpg" width="893" height="376" loading="lazy"
+                     alt="A coyote standing on a rock slab on a dry, rocky hillside.">
+              </li>
+              <li>
+                <img src="images/hiking-selfie.webp" width="1280" height="961" loading="lazy"
+                     alt="Jake in sunglasses on a trail, with open grassland and foothills behind him.">
+              </li>
+              <li>
+                <img src="images/hiking-sleeping-fox.webp" width="1280" height="960" loading="lazy"
+                     alt="A red fox curled up asleep in tall green grass.">
+              </li>
+              <li>
+                <picture>
+                  <source srcset="images/hiking-coyote-running-still.jpg" media="(prefers-reduced-motion: reduce)">
+                  <img src="images/hiking-coyote-running.gif" width="359" height="251" loading="lazy"
+                       alt="Animation of a coyote trotting across a green meadow.">
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-meta">
+            <span>02 &middot; pets</span>
+          </div>
+          <div class="project-body">
+            <h3>Pets</h3>
+            <p>I love taking care of my pet dogs, Blue and Maisie, and my axolotl Maxi.</p>
+            <ul class="gallery-captioned">
+              <li>
+                <figure>
+                  <img src="images/pet-blue.webp" width="800" height="600" loading="lazy"
+                       alt="Blue, a tan shepherd mix on a leash, standing in front of a fallen log.">
+                  <figcaption>Blue</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="images/pet-maisie.webp" width="767" height="722" loading="lazy"
+                       alt="Maisie, a brindle dog, curled up on a plush dog bed and looking at the camera.">
+                  <figcaption>Maisie</figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <img src="images/pet-maxi.webp" width="769" height="800" loading="lazy"
+                       alt="Maxi, an axolotl with feathery pink gills, swimming against the glass of a tank.">
+                  <figcaption>Maxi</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="muted">© 2026 Jake Galloway</span>
+      <span class="footer-links">
+        <a href="mailto:JakeG1444@gmail.com">email</a>
+        <a href="https://github.com/JakeG5145">github</a>
+      </span>
+    </footer>
+
+  </div>
 </body>
 </html>

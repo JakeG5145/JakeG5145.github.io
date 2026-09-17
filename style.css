@@ -1,34 +1,332 @@
-/* A deliberately small starting point.
-   It exists to prove one thing: this file is loading.
-   If you can see spacing and a readable line length, the path in index.html works.
-
-   Delete all of it whenever you want. */
+/* Terminal-inspired dark theme.
+   One accent (amber), monospace body, Archivo for headings. */
 
 :root {
-  /* Makes the page follow the reader's light or dark mode setting, for free. */
-  color-scheme: light dark;
+  --bg: #0B0C0B;
+  --surface: #121412;
+  --border: #2A2C29;
+  --border-strong: #3A3D38;
+  --text: #DCDBD3;
+  --text-strong: #F5F4EE;
+  --text-soft: #A9ADA5;
+  --text-muted: #8E938B;
+  --text-faint: #6E736C;
+  --accent: #E3B23C;
+
+  --font-body: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --font-display: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
 }
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
 
-  /* 65ch caps the line at about 65 characters. Long lines are genuinely hard
-     to read, and this single rule does more for legibility than anything else
-     in this file. */
-  max-width: 65ch;
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
+a:hover {
+  color: var(--bg);
+  background: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.page {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
-  line-height: 1.6;
-  font-size: 1.125rem;
+  padding: 0 clamp(16px, 4vw, 48px) 80px;
+  min-height: 100vh;
+}
+
+.muted { color: var(--text-faint); }
+
+/* Header */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.site-name { color: var(--accent); }
+
+.site-nav {
+  display: flex;
+  gap: 18px;
+}
+
+/* Hero */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px 48px;
+  align-items: center;
+  padding: 64px 0 56px;
+  border-bottom: 1px solid var(--border);
+}
+
+.headshot {
+  width: clamp(180px, 24vw, 240px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+}
+
+/* Photo moves above the text on narrow screens. */
+@media (max-width: 640px) {
+  .hero { grid-template-columns: 1fr; }
+  .headshot { order: -1; width: 140px; }
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin: 0 0 26px;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6.4vw, 66px);
+  line-height: 1.04;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--text-strong);
+  max-width: 20ch;
+  text-wrap: balance;
 }
 
-p {
-  margin-bottom: 1.5rem;
+.lede {
+  margin: 0 0 32px;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 62ch;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.btn {
+  border: 1px solid var(--border-strong);
+  padding: 9px 16px;
+  color: var(--text);
+}
+
+.btn-primary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Section labels */
+
+.label {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Projects */
+
+.projects { padding: 44px 0 56px; }
+
+.project {
+  border: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.project-body { padding: 24px 18px; }
+
+/* Text beside a phone screenshot; stacks when narrow. */
+.project-body-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px 40px;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .project-body-split { grid-template-columns: 1fr; }
+}
+
+.project h3 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-strong);
+}
+
+.project p {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 64ch;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.shot {
+  margin: 0 0 20px;
+}
+
+.shot img {
+  border: 1px solid var(--border);
+}
+
+.shot-phone {
+  margin: 0;
+  justify-self: center;
+}
+
+.shot-phone img {
+  width: 229px;
+  border-radius: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.tags li {
+  border: 1px solid var(--border);
+  padding: 4px 9px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 13px;
+}
+
+/* Hobbies */
+
+.hobbies { padding: 0 0 56px; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery li:first-child { grid-column: 1 / -1; }
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+/* Smaller photos share one crop so the row lines up. */
+.gallery li:not(:first-child) img { aspect-ratio: 4 / 3; }
+
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: 1fr; }
+}
+
+/* Captioned gallery, for photos that need a name under them. */
+
+.gallery-captioned {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery-captioned figure { margin: 0; }
+
+.gallery-captioned img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.gallery-captioned figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+@media (max-width: 640px) {
+  .gallery-captioned { grid-template-columns: 1fr; }
+}
+
+/* Footer */
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
 }
