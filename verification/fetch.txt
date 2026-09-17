@@ -1,0 +1,62 @@
+$ curl -sI https://jakeg5145.github.io
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 8009
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+Last-Modified: Thu, 17 Sep 2026 23:00:01 GMT
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31556952
+ETag: "6aac70f1-1f49"
+expires: Thu, 17 Sep 2026 23:10:29 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: 8EE4:19A92C:FABAAC:1347A35:6AAC710C
+x-github-edge-region: iad
+Accept-Ranges: bytes
+Age: 0
+Date: Thu, 17 Sep 2026 23:00:30 GMT
+Via: 1.1 varnish
+X-Served-By: cache-den-kden1300080-DEN
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1789686030.947921,VS0,VE63
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 1c178e6741c8d48a55f2b6a20a746cc0be75d29d
+
+
+$ curl -s https://jakeg5145.github.io | head -20
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jake Galloway | Software Developer</title>
+  <meta name="description" content="Jake Galloway, computer science student at Colorado School of Mines. Full-stack web and Android projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <span class="site-name">jakeg5145.github.io</span>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#projects">projects</a>
+        <a href="#hobbies">hobbies</a>
+
+=== every asset the page references ===
+style.css                                   HTTP/1.1 200 OK
+images/jake-headshot.jpg                    HTTP/1.1 200 OK
+images/steam-selector-common-games.jpg      HTTP/1.1 200 OK
+images/dast-home.jpg                        HTTP/1.1 200 OK
+images/hiking-coyote.jpg                    HTTP/1.1 200 OK
+images/hiking-selfie.webp                   HTTP/1.1 200 OK
+images/hiking-sleeping-fox.webp             HTTP/1.1 200 OK
+images/hiking-coyote-running.gif            HTTP/1.1 200 OK
+images/hiking-coyote-running-still.jpg      HTTP/1.1 200 OK
+images/pet-blue.webp                        HTTP/1.1 200 OK
+images/pet-maisie.webp                      HTTP/1.1 200 OK
+images/pet-maxi.webp                        HTTP/1.1 200 OK
